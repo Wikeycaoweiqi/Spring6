@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>Spring6_01_quickstart</module>
+        <module>Spring6_02_ioc_xml</module>
     </modules>
 
     <properties>
