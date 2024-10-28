@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="user" class="com.wikeystudy.spring6.bean.User"></bean>
+    <bean id="UserDaoImpl" class="com.wikeystudy.spring6.bean.UserDaoImpl"></bean>
+<!--    <bean id="UuserDaoImpl" class="com.wikeystudy.spring6.bean.UuserDaoImpl"></bean>-->
+    <bean id="book" class="com.wikeystudy.spring6.bean.Book">
+        <property name="name" value="Java Learning"></property>
+        <property name="author" value="wikey"></property>
+        <property name="others">
+            <null></null>
+        </property>
+    </bean>
+    <bean id="bookCon" class="com.wikeystudy.spring6.bean.Book">
+        <constructor-arg name="name" value="Python Learning"></constructor-arg>
+        <constructor-arg name="author" value="wikey"></constructor-arg>
+        <constructor-arg name="others">
+            <null></null>
+        </constructor-arg>
+    </bean>
+
+    <bean id="department1" class="com.wikeystudy.spring6.bean.Department">
+        <property name="name" value="IT"></property>
+    </bean>
+    <bean id="department2" class="com.wikeystudy.spring6.bean.Department">
+        <property name="name" value="HR"></property>
+    </bean>
+    <bean id="employee1" class="com.wikeystudy.spring6.bean.Employee">
+        <property name="name" value="wikey"></property>
+        <property name="age" value="28"></property>
+        <property name="department" ref="department1"></property>
+    </bean>
+    <bean id="employee2" class="com.wikeystudy.spring6.bean.Employee">
+        <property name="name" value="mikey"></property>
+        <property name="age" value="25"></property>
+        <property name="department">
+            <bean id="department3" class="com.wikeystudy.spring6.bean.Department">
+                <property name="name" value="MG"></property>
+            </bean>
+        </property>
+    </bean>
+    <bean id="employee3" class="com.wikeystudy.spring6.bean.Employee">
+        <property name="name" value="wikey"></property>
+        <property name="age" value="28"></property>
+        <property name="department" ref="department2"></property>
+    </bean>
+    <bean id="employee4" class="com.wikeystudy.spring6.bean.Employee">
+        <property name="name" value="lucy"></property>
+        <property name="age" value="30"></property>
+        <property name="department" ref="department2"></property>
+        <property name="hobbies">
+            <array>
+                <value>swimming</value>
+                <value>gaming</value>
+                <value>sporting</value>
+            </array>
+        </property>
+    </bean>
+    <bean id="department4" class="com.wikeystudy.spring6.bean.Department">
+        <property name="name" value="EQ"></property>
+        <property name="employeeList">
+            <list>
+                <ref bean="employee1"></ref>
+                <ref bean="employee2"></ref>
+                <ref bean="employee3"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="student1" class="com.wikeystudy.spring6.bean.Student">
+        <property name="id" value="002"></property>
+        <property name="name" value="mikey"></property>
+        <property name="teacherMap">
+            <map>
+                <entry key="1" value-ref="teacher1"></entry>
+                <entry key="2" value-ref="teacher2"></entry>
+            </map>
+        </property>
+    </bean>
+    <bean id="student2" class="com.wikeystudy.spring6.bean.Student">
+        <property name="id" value="001"></property>
+        <property name="name" value="wikey"></property>
+        <property name="teacherMap">
+            <map>
+                <entry key="1" value-ref="teacher2"></entry>
+                <entry key="2" value-ref="teacher3"></entry>
+            </map>
+        </property>
+    </bean>
+    <bean id="student3" class="com.wikeystudy.spring6.bean.Student">
+        <property name="id" value="003"></property>
+        <property name="name" value="lucy"></property>
+        <property name="teacherMap">
+            <map>
+                <entry key="1" value-ref="teacher1"></entry>
+                <entry key="2" value-ref="teacher3"></entry>
+            </map>
+        </property>
+    </bean>
+    <bean id="teacher1" class="com.wikeystudy.spring6.bean.Teacher">
+        <property name="id" value="001"></property>
+        <property name="name" value="Riven"></property>
+    </bean>
+    <bean id="teacher2" class="com.wikeystudy.spring6.bean.Teacher">
+        <property name="id" value="002"></property>
+        <property name="name" value="Yasuo"></property>
+    </bean>
+    <bean id="teacher3" class="com.wikeystudy.spring6.bean.Teacher">
+        <property name="id" value="003"></property>
+        <property name="name" value="Ezreal"></property>
+    </bean>
+</beans>
