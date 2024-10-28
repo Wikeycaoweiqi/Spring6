@@ -14,11 +14,11 @@
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss SSS} [%t] %-3level %logger{1024} - %msg%n"/>
         </console>
         <!--文件会打印所有信息,这个log每次运行都会自动清空。fileName是文件的输出路径，如果不存在会被创建-->
-        <File name="log" fileName="d:/Spring6/spring6_log/test.log" append="false">
+        <File name="log" fileName="../spring6_log/test.log" append="false">
             <PatternLayout pattern="%d{HH:mm:ss SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
         </File>
         <!--打印所有信息，如果单次大小超过size则size大小的日志会自动存到年-月文件夹下面进行压缩存档-->
-        <RollingFile name="RollingFile" fileName="d:/Spring6/spring6_log/app.log"
+        <RollingFile name="RollingFile" fileName="../spring6_log/app.log"
                      filePattern="log/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
             <PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
             <SizeBasedTriggeringPolicy size="50MB"/>
