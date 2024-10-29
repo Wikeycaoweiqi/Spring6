@@ -3,8 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="user" class="com.wikeystudy.spring6.bean.User"></bean>
-    <bean id="UserDaoImpl" class="com.wikeystudy.spring6.bean.UserDaoImpl"></bean>
-<!--    <bean id="UuserDaoImpl" class="com.wikeystudy.spring6.bean.UuserDaoImpl"></bean>-->
     <bean id="bookSetter" class="com.wikeystudy.spring6.bean.Book">
         <property name="name" value="Java Learning"></property>
         <property name="author" value="wikey"></property>
@@ -112,4 +110,8 @@
     </bean>
     <bean id="order" class="com.wikeystudy.spring6.bean.Order" scope="prototype"></bean>
 <!--    <bean id="order" class="com.wikeystudy.spring6.bean.Order" scope="singleton"></bean>-->
+
+    <bean id="userController" class="com.wikeystudy.spring6.controller.UserController" autowire="byType"></bean>
+    <bean id="userService" class="com.wikeystudy.spring6.service.UserServiceImpl" autowire="byType"></bean>
+    <bean id="userDao" class="com.wikeystudy.spring6.dao.UserDaoImpl"></bean>
 </beans>

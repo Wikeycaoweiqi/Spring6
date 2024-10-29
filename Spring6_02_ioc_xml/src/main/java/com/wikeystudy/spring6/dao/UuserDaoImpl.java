@@ -1,5 +1,5 @@
-package com.wikeystudy.spring6.bean;
-import com.wikeystudy.spring6.dao.UserDao;
+package com.wikeystudy.spring6.dao;
+
 /**
  * @ Author：Wikey Cao
  * @ Date：25-10-2024
