@@ -11,6 +11,7 @@
     <modules>
         <module>Spring6_01_quickstart</module>
         <module>Spring6_02_ioc_xml</module>
+        <module>Spring6_03_ioc_annotation</module>
     </modules>
 
     <properties>
