@@ -5,7 +5,7 @@
     <bean id="user" class="com.wikeystudy.spring6.bean.User"></bean>
     <bean id="UserDaoImpl" class="com.wikeystudy.spring6.bean.UserDaoImpl"></bean>
 <!--    <bean id="UuserDaoImpl" class="com.wikeystudy.spring6.bean.UuserDaoImpl"></bean>-->
-    <bean id="book" class="com.wikeystudy.spring6.bean.Book">
+    <bean id="bookSetter" class="com.wikeystudy.spring6.bean.Book">
         <property name="name" value="Java Learning"></property>
         <property name="author" value="wikey"></property>
         <property name="others">
@@ -93,7 +93,7 @@
         <property name="name" value="lucy"></property>
         <property name="teacherMap">
             <map>
-                <entry key="1" value-ref="teacher1"></entry>
+                    <entry key="1" value-ref="teacher1"></entry>
                 <entry key="2" value-ref="teacher3"></entry>
             </map>
         </property>
@@ -110,4 +110,6 @@
         <property name="id" value="003"></property>
         <property name="name" value="Ezreal"></property>
     </bean>
+    <bean id="order" class="com.wikeystudy.spring6.bean.Order" scope="prototype"></bean>
+<!--    <bean id="order" class="com.wikeystudy.spring6.bean.Order" scope="singleton"></bean>-->
 </beans>

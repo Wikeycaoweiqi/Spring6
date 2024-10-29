@@ -41,49 +41,49 @@ public class Spring602Test {
     }
 
     @Test
-    public void bookBeanSetterDiTest() {
+    public void getBookBeanBySetterDiTest() {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
-        Book book = (Book) context.getBean("book");
-        System.out.println("Get setter di book bean: " + book);
+        Book book = (Book) context.getBean("bookSetter");
+        System.out.println("Get book bean by setter di: " + book);
     }
 
     @Test
-    public void bookBeanConstructorDiTest() {
+    public void getBookBeanByConstructorDiTest() {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
         Book book = (Book) context.getBean("bookCon");
-        System.out.println("Get constructor di book bean: " + book);
+        System.out.println("Get book bean by constructor di: " + book);
     }
 
     @Test
-    public void specialTypeDiOutterBeanTest() {
+    public void getEmployeeBeanBySpecialTypeOutterTest() {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
         Employee employee = (Employee) context.getBean("employee1");
         System.out.println(employee);
     }
 
     @Test
-    public void specialTypeDiInnerBeanTest() {
+    public void getEmployeeBeanBySpecialTypeInnerTest() {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
         Employee employee = (Employee) context.getBean("employee2");
         System.out.println(employee);
     }
 
     @Test
-    public void specialTypeDiArrayTest() {
+    public void getEmployeeBeanBySpecialTypeArrayTest() {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
         Employee employee = (Employee) context.getBean("employee4");
         System.out.println(employee);
     }
 
     @Test
-    public void specialTypeDiListTest() {
+    public void getEmployeeBeanBySpecialTypeListTest() {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
         Department department = (Department) context.getBean("department4");
         System.out.println(department);
     }
 
     @Test
-    public void specialTypeDiMapTest() {
+    public void getEmployeeBeanBySpecialTypeMapTest() {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
         Student student1 = (Student) context.getBean("student1");
         Student student2 = (Student) context.getBean("student2");
@@ -91,5 +91,14 @@ public class Spring602Test {
         System.out.println(student1);
         System.out.println(student2);
         System.out.println(student3);
+    }
+
+    @Test
+    public void getOrderBeanForSingletonOrPrototypeTest() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+        Order order1 = (Order) context.getBean("order");
+        System.out.println(order1);
+        Order order2 = (Order) context.getBean("order");
+        System.out.println(order2);
     }
 }
