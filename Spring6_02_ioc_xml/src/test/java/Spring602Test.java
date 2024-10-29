@@ -1,4 +1,5 @@
 import com.wikeystudy.spring6.bean.*;
+import com.wikeystudy.spring6.controller.UserController;
 import com.wikeystudy.spring6.dao.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
@@ -100,5 +101,12 @@ public class Spring602Test {
         System.out.println(order1);
         Order order2 = (Order) context.getBean("order");
         System.out.println(order2);
+    }
+
+    @Test
+    public void getAutowiredByUserControllerTest() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+        UserController userController = context.getBean("userController", UserController.class);
+        userController.run();
     }
 }
