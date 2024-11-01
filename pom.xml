@@ -14,7 +14,7 @@
         <module>Spring6_03_ioc_annotation</module>
         <module>Spring6_04_reflect</module>
         <module>Spring6_05_mySpringIoc</module>
-        <module>Spring6_06_Aop</module>
+        <module>Spring6_06_proxy</module>
     </modules>
 
     <properties>

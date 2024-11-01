@@ -1,4 +1,4 @@
-package com.wikeystudy.spring6.aop;
+package com.wikeystudy.spring6.aop.proxy;
 
 /**
  * @ Author：Wikey Cao
