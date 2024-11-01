@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>Spring6_05_mySpringIoc</artifactId>
+    <artifactId>Spring6_08_junit</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

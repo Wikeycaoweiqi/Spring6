@@ -13,8 +13,11 @@
         <module>Spring6_02_ioc_xml</module>
         <module>Spring6_03_ioc_annotation</module>
         <module>Spring6_04_reflect</module>
-        <module>Spring6_05_mySpringIoc</module>
+        <module>Spring6_05_myspringioc</module>
         <module>Spring6_06_proxy</module>
+        <module>Spring6_07_aop_annotation</module>
+        <module>Spring6_08_junit</module>
+        <module>Spring6_09_jdbc_transaction</module>
     </modules>
 
     <properties>
@@ -48,6 +51,40 @@
             <artifactId>jakarta.annotation-api</artifactId>
             <version>2.1.1</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>6.0.23</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>6.0.23</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>6.0.20</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>6.0.20</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.15</version>
+        </dependency>
     </dependencies>
 </project>
