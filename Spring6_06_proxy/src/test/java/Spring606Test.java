@@ -1,6 +1,6 @@
-import com.wikeystudy.spring6.aop.Calculator;
-import com.wikeystudy.spring6.aop.CalculatorImpl;
-import com.wikeystudy.spring6.aop.ProxyFactory;
+import com.wikeystudy.spring6.aop.proxy.Calculator;
+import com.wikeystudy.spring6.aop.proxy.CalculatorImpl;
+import com.wikeystudy.spring6.aop.proxy.ProxyFactory;
 import org.junit.jupiter.api.Test;
 
 /**
