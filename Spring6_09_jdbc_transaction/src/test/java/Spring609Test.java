@@ -1,9 +1,11 @@
 import com.wikeystudy.spring6.bean.Employee;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+
+import java.util.List;
 
 /**
  * @ Author：Wikey Cao
@@ -19,16 +21,31 @@ public class Spring609Test {
     @Test
     public void queryEmpSqlTest() {
         Object[] params = {1};
-        String sql = "SELECT t.* FROM t_emp t WHERE id = ?";
-        Employee employee = jdbcTemplate.queryForObject(sql, (rs, rowNum) -> {
-            Employee emp = new Employee();
-            emp.setId(rs.getInt("id"));
-            emp.setName(rs.getString("name"));
-            emp.setAge(rs.getInt("age"));
-            emp.setSex(rs.getString("sex"));
-            return emp;
-        }, params);
+        String sql = "SELECT T.* FROM T_EMP T WHERE ID = ?";
+//        Employee employee = jdbcTemplate.queryForObject(sql, (rs, rowNum) -> {
+//            Employee emp = new Employee();
+//            emp.setId(rs.getInt("id"));
+//            emp.setName(rs.getString("name"));
+//            emp.setAge(rs.getInt("age"));
+//            emp.setSex(rs.getString("sex"));
+//            return emp;
+//        }, params);
+        Employee employee = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Employee.class), params);
         System.out.println(employee);
+    }
+
+    @Test
+    public void queryEmpListSqlTest() {
+        String sql = "SELECT T.* FROM T_EMP T";
+        List<Employee> employeeList = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Employee.class));
+        System.out.println(employeeList);
+    }
+
+    @Test
+    public void querySingleValueSqlTest() {
+        String sql = "SELECT COUNT(*) FROM T_EMP T";
+        Integer count = jdbcTemplate.queryForObject(sql, Integer.class);
+        System.out.println(count);
     }
 
     @Test
