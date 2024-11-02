@@ -18,6 +18,7 @@
         <module>Spring6_07_aop_annotation</module>
         <module>Spring6_08_junit</module>
         <module>Spring6_09_jdbc_transaction</module>
+        <module>Spring6_10_resouces</module>
     </modules>
 
     <properties>

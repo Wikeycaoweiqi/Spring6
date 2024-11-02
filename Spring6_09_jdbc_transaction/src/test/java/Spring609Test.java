@@ -1,4 +1,5 @@
 import com.wikeystudy.spring6.bean.Employee;
+import com.wikeystudy.spring6.controller.BookController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -17,6 +18,9 @@ public class Spring609Test {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    private BookController bookController;
 
     @Test
     public void queryEmpSqlTest() {
@@ -70,5 +74,10 @@ public class Spring609Test {
         String sql = "DELETE FROM T_EMP WHERE ID = ?";
         int rows = jdbcTemplate.update(sql, params);
         System.out.println(rows);
+    }
+
+    @Test
+    public void buyBookTransactionTest() throws InterruptedException {
+        bookController.buyBook(1, 3);
     }
 }
