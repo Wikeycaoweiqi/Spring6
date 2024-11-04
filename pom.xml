@@ -19,6 +19,8 @@
         <module>Spring6_08_junit</module>
         <module>Spring6_09_jdbc_transaction</module>
         <module>Spring6_10_resouces</module>
+        <module>Spring6_11_i18n</module>
+        <module>Spring6_12_validation</module>
     </modules>
 
     <properties>
@@ -87,5 +89,17 @@
             <artifactId>druid</artifactId>
             <version>1.2.15</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>7.0.5.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>jakarta.el</artifactId>
+            <version>4.0.1</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 </project>
