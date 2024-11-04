@@ -1,4 +1,5 @@
 import com.wikeystudy.spring6.ClassPathResourceDemo;
+import com.wikeystudy.spring6.FileResourceDemo;
 import com.wikeystudy.spring6.UrlResourceDemo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,11 @@ public class Spring610Test {
     @Test
     public void classPathResourceTest() {
         ClassPathResourceDemo.loadClassPathResource("file:bean.xml");
+    }
+
+    @Test
+    public void FileResourceTest() {
+        FileResourceDemo.loadFileResource("D:\\Spring6\\Spring6_10_resouces\\src\\main\\resources\\bean.xml");
+        FileResourceDemo.loadFileResource("src/main/resources/bean.xml");
     }
 }
